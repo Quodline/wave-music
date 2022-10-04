@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#banner {
+    /*background-image: url(/img/hero-bg.jpg);
+    background-size: cover;*/
+    @apply bg-gray-900;
+    background-image: url(/img/banner-art.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.input {
+    @apply block w-full p-4 bg-white border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
+}
