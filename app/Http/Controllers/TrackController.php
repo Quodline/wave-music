@@ -38,11 +38,11 @@ class TrackController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'file' => 'required|mimes:mp3,mp4|max:5120',
+            'file' => 'required|mimes:mp3,mp4|max:10240',
             'seconds' => 'required|integer',
         ]);
 
-        $validated['file'] = cloudinary()->upload($validated['file']->getRealPath(), [
+        $validated['file'] = cloudinary()->upload($request->file('file')->getRealPath(), [
             'resource_type' => 'video',
         ])->getSecurePath();
 
